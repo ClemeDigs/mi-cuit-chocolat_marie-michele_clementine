@@ -53,8 +53,8 @@ const demiCercleGraph = () => {
             // new value of the chart.
             adjustable: true,
             responsive: [
-                {maxWidth:500,parentCss: {'float':'right'}},
-                {maxWidth:200,parentCss: {'float':'none'}}
+                {maxWidth: null,width:500,height: 300,parentCss:{textAlign:'none'}},
+                {maxWidth:768,width:300,height:200,options: {textSize: 12,marginBottom:0, marginLeft:30, marginTop:50, needleHeadLength:50},parentCss:{textAlign:'center'}}
             ]
         }
     }).draw();
@@ -94,7 +94,7 @@ const demiCercleGraph = () => {
         id: 'chart-container1',
         data: data,
         options: {
-            labels: ['farine','beurre','chocolat','sucre','oeufs',],
+            labels: ['Farine','Beurre','Chocolat','Sucre','Oeufs',],
             shadow: true,
             colorsStroke: 'rgba(216,216,216,1)',
             linewidth: 2,
@@ -108,7 +108,12 @@ const demiCercleGraph = () => {
                 fontWeight: 'bold',
                 fontSize: '16pt',
                 opacity: 0.85
-            }
+            },
+            responsive: [
+                {maxWidth: null,width:500,height: 300,parentCss:{textAlign:'none'}},
+                {maxWidth: 768,width:400,height: 280,options: {textSize: 10,marginInner: 5,
+                marginBottom:90, marginLeft:60},parentCss:{'float':'none',textAlign:'center'}}
+            ]
         }
     }).draw();
 }
@@ -149,7 +154,7 @@ const sketchyChart = () => {
             
             responsive: [
                 {maxWidth: null,width:500,height: 280,options: {textSize: 14,marginInner: 17,marginBottom:100},parentCss:{textAlign:'none'}},
-                {maxWidth: 300,width:300,height: 200,options: {textSize: 10,marginInner: 5,marginBottom:90, marginLeft:60},parentCss:{'float':'none',textAlign:'center'}}
+                {maxWidth: 768,width:400,height: 280,options: {textSize: 10,marginInner: 5,marginBottom:90, marginLeft:60},parentCss:{'float':'none',textAlign:'center'}}
             ]
         }
     }).draw();
@@ -193,8 +198,8 @@ const sketchyChart = () => {
             highlightFill: 'Gradient(rgba(255,255,255,0):white)',
             highlightStroke: 'Gradient(rgba(255,255,255,0):white)',
             responsive: [
-                {maxWidth: 500,width:500,height: 300,parentCss:{textAlign:'none'}},
-                {maxWidth: 300,width:300,height: 200,parentCss:{'float':'none', textAlign:'center'}}
+                {maxWidth: null,width:500,height: 300,parentCss:{textAlign:'none'}},
+                {maxWidth: 768,width:400,height: 400,parentCss:{'float':'none', textAlign:'center'}}
             ]
         }
 
@@ -241,7 +246,10 @@ const horseShoeGraph = () => {
             options: {
                 labelsCenterDecimals: 0,
                 labelsCenterUnitsPost: '%'
-            }
+            },
+            responsive: [
+                {maxWidth:768,width:300,height:300,options: {textSize: 20}, marginLeft: 0}
+            ]
         }).grow();
 
         // Mise à jour des valeurs séquentielles
@@ -285,8 +293,8 @@ const horseShoeGraph = () => {
             yaxisScaleMax: 100,
             xaxisLabels:['Noir 85%','Noir 55%','Lait 35%','Blanc 32%','Cacao'],
             responsive: [
-                {maxWidth:500,width: 500,height:350,options:{textSize: 14},parentCss:{'float':'right', textAlign: 'none'}},
-                {maxWidth:300, width: 300,height:200,options:{textSize: 10},parentCss:{'float':'none', textAlign: 'center'}}
+                {maxWidth:null,width: 500,height:350,options:{textSize: 14},parentCss:{'float':'right', textAlign: 'none'}},
+                {maxWidth:768, width: 400,height:300,options:{textSize: 10},parentCss:{'float':'none', textAlign: 'center'}}
             ]
         }
     }).trace(null, function ()
